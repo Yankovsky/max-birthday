@@ -1,28 +1,261 @@
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <style>
-    * {
-      font-family: "Comic Sans MS";
-      cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAhGVYSWZNTQAqAAAACAAFARIAAwAAAAEAAQAAARoABQAAAAEAAABKARsABQAAAAEAAABSASgAAwAAAAEAAgAAh2kABAAAAAEAAABaAAAAAAAAAEgAAAABAAAASAAAAAEAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAAEAAAAADHbxzxAAAACXBIWXMAAAsTAAALEwEAmpwYAAACyGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNi4wLjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgICAgICAgICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iPgogICAgICAgICA8dGlmZjpZUmVzb2x1dGlvbj43MjwvdGlmZjpZUmVzb2x1dGlvbj4KICAgICAgICAgPHRpZmY6UmVzb2x1dGlvblVuaXQ+MjwvdGlmZjpSZXNvbHV0aW9uVW5pdD4KICAgICAgICAgPHRpZmY6WFJlc29sdXRpb24+NzI8L3RpZmY6WFJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgICAgIDxleGlmOlBpeGVsWERpbWVuc2lvbj4zMjwvZXhpZjpQaXhlbFhEaW1lbnNpb24+CiAgICAgICAgIDxleGlmOkNvbG9yU3BhY2U+MTwvZXhpZjpDb2xvclNwYWNlPgogICAgICAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+MzI8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4Ko+jingAAAwBJREFUOBFtU01IXFcU/u69b+Y9Z57Ob3R0Go0dtYJoaQlGG5Nmk0JDFi1xFqEgli5q6aKbltJFabIJhFAaugzEBLIJmfXULrowIFkELJhFtDTahFrMj2Zm1Dfje2/evT13/CEtuTx4552f757zne8Brzkqnxfa7Z0Z/nzn7NBX2lYKTAFM268e/urH/xMCw3XMVORq7XTfJcagqJpw/gtyAKADOkEDzq+sNPxq3dmBFYWVzXznnO6/oWN7OQed7CbuFasPvo6qyUnr6Py8XxoZOSUE/wYDlNIbdSNpc7I2mvteg6g8Di5uGI3WJk9ZaFu4DM5DG+h5w+5yfw2P5YZhC6la/TASBoWcqT+PfdjCCgj2R+H7hMHDJxD1MJue3rKO+58aScvEYeFBSc5YADRLsEDGDKaSuouLe1wYKBSkdrjb1hxcdVfbIaHeRyYMROoCTBIxtAJWh3LrLxbHzqypoc4Iu3atqnM58vnGGLJafpvBOaedygzSiBNuCxHfQRjxECBtGsGyTvx+86Pa44UreeyummOg0GA+FCt9EXqr/ll5dDAvTNmJCAGkiPSkARghBhaFke3K2M3ObV75a+LqyUpHowN2AfJR7uNWb+vZAAtXemOD4o7IZRM4ZANxiyFEo9CDjh2ga0vB3pBGZcO2yk8GNADBA4m+Uli+UJaqLYId6g7Q286RMRniUYrShD69+kmcls/wty85yYk7m026lut1pGZmV0Updp/RJXizotC5w5AmLhJ9kKkRIBsH2imWJDW7jqiKpON1v7vQAMCFXWmqWPu31bWWl1LWDMS3lWrNQTaNEqHvQSZGaRwTSG8HaojBf5j+oe234goJSnACaJAYOT++FARH5vgW9Ws/96T5Du2uh5hvJSXkJJqFi2DVqD3tKSaw9KP+ubSguFahbmW2WHQFM35xl9srWC+bQv5BzNMmOHmN5xzlGdO7l13zy/YtnU9KotLXnNLUyBHv58Gf5IPMcr1S8OvVhWfqn/EZ7zq+3JyYSOkSzdt+6b+fUhnUKN4j2wAAAABJRU5ErkJggg=='), auto;
-    }
-  </style>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+        * {
+            font-family: "Comic Sans MS";
+            cursor: url('data:image/png;base64,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'), auto;
+        }
+
+        .chili {
+            position: absolute;
+            animation: explode 0.82s cubic-bezier(.36, .07, .19, .97) both;
+            transform: translate3d(0, 0, 0);
+        }
+
+
+        @keyframes explode {
+            0% {
+                opacity: 0;
+                transform: scale(0) translate(1px, 1px) rotate(20deg);
+            }
+
+            10% {
+                transform: scale(0.4) translate(-1px, -2px) rotate(-10deg);
+            }
+
+            20% {
+                opacity: 1;
+                transform: scale(0.7) translate(-3px, 0px) rotate(10deg);
+            }
+
+            30% {
+                transform: scale(0.9) translate(3px, 2px) rotate(0deg);
+            }
+            40% {
+                transform: scale(1.2) translate(1px, -1px) rotate(10deg);
+            }
+            50% {
+                transform: scale(1.3) translate(-1px, 2px) rotate(-10deg);
+            }
+            60% {
+                transform: scale(1.7) translate(-3px, 1px) rotate(0deg);
+            }
+            70% {
+                transform: scale(2.1) translate(3px, 1px) rotate(-10deg);
+            }
+            80% {
+                transform: scale(2.4) translate(-1px, -1px) rotate(10deg);
+            }
+            90% {
+
+                transform: scale(2.7) translate(1px, 2px) rotate(0deg);
+            }
+
+            100% {
+                transform: scale(3) translate(1px, -2px) rotate(-10deg);
+            }
+        }
+
+        .explosion {
+            position: absolute;
+            transform: scale(4);
+            animation: fadeout 1s;
+        }
+
+        @keyframes fadeout {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        body {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #570808;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            background: #17e0e0;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .secret1 {
+            position: absolute;
+            bottom: 0;
+            right: 50px;
+            width: 10px;
+            height: 10px;
+            background: #098c8c;
+        }
+
+        .secret2 {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background: #720707;
+        }
+
+        p {
+            text-align: center;
+            max-width: 500px;
+        }
+
+        .doner {
+            width: 100%;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: doner 1.5s;
+            animation-iteration-count: 2;
+        }
+
+        .laser {
+            width: 100%;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: laser 2s;
+        }
+
+        @keyframes laser {
+            0% {
+            }
+
+            20% {
+                transform: skew(5deg, 3deg) scale(0.7);
+
+            }
+
+            100% {
+                transform: skew(-20deg, -10deg) scale(4);
+            }
+
+        }
+
+        @keyframes doner {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            12.5% {
+                transform: translate(10px, -10px);
+            }
+
+            25% {
+                transform: translate(20px, 0px);
+            }
+
+            37.5% {
+                transform: translate(10px, -10px);
+            }
+
+            50% {
+                transform: translate(0, 0);
+            }
+
+            62.5% {
+                transform: translate(-10px, -10px);
+            }
+
+            75% {
+                transform: translate(-20px, 0px);
+            }
+
+            87.5% {
+                transform: translate(-10px, -10px);
+            }
+        }
+	</style>
 </head>
 <body>
-<h1>🌶️ Hot year for a hot guy 🌶️</h1>
-<h2>Discover Van Duin's secret sauces</h2>
+<div class="card">
+	<h1>🌶️ Hot year for a hot guy 🌶️</h1>
+	<h2>Discover Van Duin's secret sauce</h2>
 
-<p>Your present is waiting for you on <a href="https://heatsupply.nl/">Heat Supply</a> 😏</p>
-<p>🥳 It is a year Need For Heat subscription 🥳</p>
-<p>Don't forget to update the address and the phone number on the heatsupply website <i>(otherwise Andrey will receive all your hot sauces 😋)</i></p>
-<details>
-  <summary>Top secret details (burn after reading)</summary>
-  <div>login: hotsauceforahotguy@gmail.com</div>
-  <div>pass: <i>check Slack</i></div>
-</details>
+	<p>Your present is waiting for you on <a href="https://heatsupply.nl/">Heat Supply</a> 😏</p>
+	<p>🥳 It is a year Need For Heat subscription 🥳</p>
+	<p>Don't forget to update the address and the phone number on the heatsupply website <i>(otherwise Andrey will
+		receive
+		all your hot sauces 😋)</i></p>
+	<details>
+		<summary>Top secret details (burn after reading)</summary>
+		<div>login: hotsauceforahotguy@gmail.com</div>
+		<div>pass: <i>check Slack</i></div>
+	</details>
+	<p>
+		With love from Alvaro, Andrey, Guilherme, Krisztián, and Matthijs ❤️
+	</p>
+
+	<div class="secret1"></div>
+	<div class="secret2"></div>
+	<img src="./doner.png" alt="" id="doner" class="doner">
+	<img src="./laser.png" alt="" id="laser" class="laser">
+	<iframe src="./BornSlippy.mp3" type="audio/mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+	<audio autoplay loop>
+		<source src="./BornSlippy.mp3" type="audio/mp3">
+	</audio>
+</div>
+<script>
+  const spawnChili = () => {
+    const padding = 70;
+    const x = Math.floor(Math.random() * window.innerWidth - padding);
+    const y = Math.floor(Math.random() * window.innerHeight - padding);
+    const chili = document.createElement('div');
+    chili.className = 'chili';
+    chili.innerText = '🌶️';
+    chili.style.left = `${ x }px`;
+    chili.style.top = `${ y }px`;
+    chili.onanimationend = () => {
+      chili.innerText = '💥';
+      chili.className = 'explosion';
+      chili.onanimationend = () => {
+        document.body.removeChild(chili);
+      };
+    };
+    document.body.appendChild(chili);
+  };
+  const frame = () => {
+    if (Math.random() < 0.05) {
+      spawnChili();
+    }
+    requestAnimationFrame(frame);
+  };
+  frame();
+
+  document.getElementsByClassName('secret1')[0].addEventListener('click', () => {
+    document.getElementById('doner').style.display = 'block';
+    document.getElementById('doner').onanimationend = () => {
+      document.getElementById('doner').style.display = 'none';
+    };
+  });
+
+  document.getElementsByClassName('secret2')[0].addEventListener('click', () => {
+    document.getElementById('laser').style.display = 'block';
+    document.getElementById('laser').onanimationend = () => {
+      document.getElementById('laser').style.display = 'none';
+    };
+  });
+</script>
 </body>
 </html>
