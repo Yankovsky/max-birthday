@@ -212,7 +212,7 @@
 	<img src="./doner.png" alt="" id="doner" class="doner">
 	<img src="./laser.png" alt="" id="laser" class="laser">
 	<iframe src="./BornSlippy.mp3" type="audio/mp3" allow="autoplay" id="audio" style="display:none"></iframe>
-	<audio autoplay loop>
+	<audio autoplay loop id="audioelement">
 		<source src="./BornSlippy.mp3" type="audio/mp3">
 	</audio>
 </div>
@@ -255,6 +255,13 @@
     document.getElementById('laser').onanimationend = () => {
       document.getElementById('laser').style.display = 'none';
     };
+  });
+
+  document.addEventListener('click', () => {
+    const myAudio = document.getElementById('audioelement').play()
+    if (myAudio.duration === 0 && myAudio.paused) {
+      myAudio.play()
+    }
   });
 </script>
 </body>
